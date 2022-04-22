@@ -32,9 +32,6 @@ Only one valid answer exists.
 // Your solution for 01- here:
 
 function twoSum(array, integer) {
-  //loop through the array and for each item, subtract it from integer to find the required number
-  //check if that number exists in the array
-  // let acc
   let answer = []
   array.forEach(item => {
     let acc = integer - item
@@ -42,7 +39,6 @@ function twoSum(array, integer) {
       return answer = [array.indexOf(acc), array.indexOf(item)]     
     }
   })
-  console.log(answer);
   return answer
 }
 
@@ -123,7 +119,19 @@ Result:
 -----------------------------------------------------------------------------*/
 // Your solution for 02- here:
 
+function compareTriplets(a, b) {
+  let c = [0, 0]
+  for (let i = 0; i < a.length; i++) {
+    if (a[i] > b[i]) {
+      c[0] += 1
+    } else if (b[i] > a[i]){
+      c[1] =+ 1
+    }
+  }
+  return c
+}
 
+compareTriplets([13,33,56], [12,53,65])
 
 
 /*-----------------------------------------------------------------------------
