@@ -128,10 +128,11 @@ function compareTriplets(a, b) {
       c[1] =+ 1
     }
   }
+  console.log(c)
   return c
 }
 
-compareTriplets([13,33,56], [12,53,65])
+compareTriplets([13,33,56], [13,53,65])
 
 
 /*-----------------------------------------------------------------------------
@@ -185,7 +186,13 @@ Difference: |4 - 19| = 15
 -----------------------------------------------------------------------------*/
 // Your solution for 03- here:
 
+function diagonalDifference(array) {
+  let leftToRight = array[0][0] + array[1][1] + array[2][2]
+  let rightToLeft = array[0][2] + array [1][1] + array[2][0]
+  return Math.abs(leftToRight - rightToLeft)
+}
 
+diagonalDifference([[11,2,4],[4,5,6],[10,8,-12]])
 
 
 /*-----------------------------------------------------------------------------
