@@ -42,7 +42,7 @@ function twoSum(array, integer) {
   return answer
 }
 
-twoSum([2,7,11,15], 9)
+// twoSum([2,7,11,15], 9)
 
 
 
@@ -132,7 +132,7 @@ function compareTriplets(a, b) {
   return c
 }
 
-compareTriplets([13,33,56], [13,53,65])
+// compareTriplets([13,33,56], [13,53,65])
 
 
 /*-----------------------------------------------------------------------------
@@ -192,7 +192,7 @@ function diagonalDifference(array) {
   return Math.abs(leftToRight - rightToLeft)
 }
 
-diagonalDifference([[11,2,4],[4,5,6],[10,8,-12]])
+// diagonalDifference([[11,2,4],[4,5,6],[10,8,-12]])
 
 
 /*-----------------------------------------------------------------------------
@@ -215,7 +215,26 @@ The function plusMinus should return an array like this:
 // Your solution for 04- here:
 
 
+// positive negative zero
 
+
+function plusMinus(nums) {
+  let positives = 0 
+  let negatives = 0
+  let zeros = 0
+  nums.forEach(num => {
+    if (num > 0 ){positives ++}
+    if (num < 0){negatives ++}
+    if (num === 0){zeros ++}
+  })
+  let pRatio = positives / nums.length
+  let nRatio = negatives / nums.length
+  let zRatio = zeros / nums.length
+
+  return [pRatio.toFixed(6), nRatio.toFixed(6), zRatio.toFixed(6)]
+}
+
+console.log(plusMinus([1,1,0,-1,-1]));
 
 /*-----------------------------------------------------------------------------
 Challenge: 05 - staircase
