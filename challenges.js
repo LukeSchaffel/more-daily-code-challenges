@@ -286,27 +286,20 @@ The staircase is right-aligned, composed of # symbols and spaces, and has a heig
 // Your solution for 05- here:
 
 function staircase(num) {
-  const start = num
   let padding = 0
   let answer = []
   for (let i = 0; i < num; i++) {
     let arr =[]
-    for (let j = 0; j < (num-padding); j++) {
-      arr.push("#")
-    }
-    for (let j = 0; j < padding; j++) {
-          arr.unshift(' ')
-        }
-
+    for (let j = 0; j < (num-padding); j++) {arr.push("#")}
+    for (let j = 0; j < padding; j++) {arr.unshift(' ')}
     let str = arr.join('')
     padding ++
-    // console.log(space.repeat(padding));
     answer.unshift(str)
   }
   return answer
 }
 
-console.log(staircase(5));
+// console.log(staircase(2));
 
 
 
@@ -345,6 +338,25 @@ Sum everything except 5, the sum is 10.
 // Your solution for 06- here:
 
 
+function miniMaxSum(arr) {
+  let highestArr = [...arr]
+  highestArr.splice(arr.indexOf(Math.min(...arr)), 1)
+  
+
+  let lowestArr = [...arr]
+  lowestArr.splice(arr.indexOf(Math.max(...arr)), 1)
+
+
+  return [
+    lowestArr.reduce((a,b)=>a+b , 0), 
+    highestArr.reduce((a,b)=>a+b , 0)
+  ]
+
+
+}
+
+
+console.log(miniMaxSum([1, 2,3,5,5]));
 
 
 
