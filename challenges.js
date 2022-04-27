@@ -347,16 +347,13 @@ function miniMaxSum(arr) {
   lowestArr.splice(arr.indexOf(Math.max(...arr)), 1)
 
 
-  return [
-    lowestArr.reduce((a,b)=>a+b , 0), 
-    highestArr.reduce((a,b)=>a+b , 0)
-  ]
+  return [lowestArr.reduce((a,b)=>a+b , 0), highestArr.reduce((a,b)=>a+b , 0)]
 
 
 }
 
 
-console.log(miniMaxSum([1, 2,3,5,5]));
+// console.log(miniMaxSum([1, 2,3,5,5]));
 
 
 
@@ -392,8 +389,18 @@ Candle heights are 3, 2, 1, and 3. The tallest candles are 3 units, and there ar
 // Your solution for 07- here:
 
 
+function birthdayCakeCandles(candles) {
+  let tallest = Math.max(...candles)
+  let acc = 0
+  candles.forEach(candle => {
+    if (candle === tallest){
+      acc++
+    }
+  })
+  return acc
+}
 
-
+console.log(birthdayCakeCandles([3,2,1,3]));
 
 
 /*-----------------------------------------------------------------------------
