@@ -234,7 +234,7 @@ function plusMinus(nums) {
   return [pRatio.toFixed(6), nRatio.toFixed(6), zRatio.toFixed(6)]
 }
 
-console.log(plusMinus([1,1,0,-1,-1]));
+// console.log(plusMinus([1,1,0,-1,-1]));
 
 /*-----------------------------------------------------------------------------
 Challenge: 05 - staircase
@@ -285,7 +285,28 @@ The staircase is right-aligned, composed of # symbols and spaces, and has a heig
 -----------------------------------------------------------------------------*/
 // Your solution for 05- here:
 
+function staircase(num) {
+  const start = num
+  let padding = 0
+  let answer = []
+  for (let i = 0; i < num; i++) {
+    let arr =[]
+    for (let j = 0; j < (num-padding); j++) {
+      arr.push("#")
+    }
+    for (let j = 0; j < padding; j++) {
+          arr.unshift(' ')
+        }
 
+    let str = arr.join('')
+    padding ++
+    // console.log(space.repeat(padding));
+    answer.unshift(str)
+  }
+  return answer
+}
+
+console.log(staircase(5));
 
 
 
