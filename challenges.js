@@ -400,7 +400,7 @@ function birthdayCakeCandles(candles) {
   return acc
 }
 
-console.log(birthdayCakeCandles([3,2,1,3]));
+// console.log(birthdayCakeCandles([3,2,1,3]));
 
 
 /*-----------------------------------------------------------------------------
@@ -426,9 +426,25 @@ Result: '19:05:45'
 -----------------------------------------------------------------------------*/
 // Your solution for 08- here:
 
+function timeConversion(time) {
+  const amOrPm = time.slice(-2).toUpperCase()
+  const hour = time.slice(0, 2)
+  if (amOrPm === 'AM') {
+    if (parseInt(hour) === 12){
+      return `00:${time.slice(3, -2)}`
+    } else {
+      return `${hour}:${time.slice(3, -2)}`
+    }
+  } else if ((amOrPm === 'PM')){
+    if (parseInt(hour) === 12) {
+      return `12:${time.slice(3, -2)}`
+    } else {
+      return `${parseInt(hour)+12}:${time.slice(3, -2)}`
+    }
+  }
+}
 
-
-
+console.log(timeConversion('01:01:00PM'));
 /*-----------------------------------------------------------------------------
 Challenge: 09 - gradingStudents
 
