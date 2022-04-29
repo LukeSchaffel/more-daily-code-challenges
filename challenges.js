@@ -444,7 +444,7 @@ function timeConversion(time) {
   }
 }
 
-console.log(timeConversion('01:01:00PM'));
+// console.log(timeConversion('01:01:00PM'));
 /*-----------------------------------------------------------------------------
 Challenge: 09 - gradingStudents
 
@@ -484,9 +484,25 @@ Student 4 received a grade below 38, so the grade will not be modified and the s
 -----------------------------------------------------------------------------*/
 // Your solution for 09- here:
 
+function gradingStudents(grades) {
+  const gradesToRound = ['3', '4', '8', '9']
+  let output = []
+  grades.forEach(grade => {
+    if (gradesToRound.includes(grade.toString()[1]) && grade > 37) {
+      if (grade.toString()[1] === '3' || grade.toString()[1] === '8') {
+        output.push(grade+2)
+      }
+      if (grade.toString()[1] === '4' || grade.toString()[1] === '9') {
+        output.push(grade+1)
+      }
+    } else {
+      output.push(grade)
+    }
+  })
+  return output
+}
 
-
-
+console.log(gradingStudents([73,67,38,33]));
 
 /*-----------------------------------------------------------------------------
 Challenge: 10 - kangaroo
